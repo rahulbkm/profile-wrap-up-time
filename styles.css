@@ -72,6 +72,10 @@
     --font-weight-regular: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
+    
+    /* Layout */
+    --topbar-height: 48px;
+    --banner-height: 33px;
 }
 
 /* Global Styles */
@@ -95,7 +99,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 48px;
+    height: var(--topbar-height);
     background-color: var(--color-topbar-bg);
     color: var(--color-topbar-text);
     padding: 0 var(--spacing-lg);
@@ -172,7 +176,7 @@ body {
 /* Main Container */
 .main-container {
     display: flex;
-    height: calc(100vh - 48px - 33px); /* viewport height minus top bar and banner */
+    height: calc(100vh - var(--topbar-height) - var(--banner-height));
     overflow: hidden;
 }
 
@@ -643,17 +647,25 @@ body {
 }
 
 /* Notes for icon integration:
- * Replace emoji placeholders with Fluent UI Icons:
- * - Brand icon: FluentIcon.Settings
- * - Help: FluentIcon.Help
- * - Settings: FluentIcon.Settings
- * - Nav icons: Use appropriate Fluent UI Icons for each section
- * - Button icons: FluentIcon.Add, Edit, Delete, Refresh
- * - Search: FluentIcon.Search
- * - More actions: FluentIcon.MoreVertical
- * - Dropdown: FluentIcon.ChevronDown
+ * Replace emoji placeholders with proper icon implementation.
  * 
- * Example with Fluent UI React:
- * import { Icon } from '@fluentui/react/lib/Icon';
- * <Icon iconName="Add" />
+ * For static HTML, consider:
+ * 1. SVG icons inline or via <use> element
+ * 2. Icon fonts (e.g., Fluent UI System Icons)
+ * 3. CSS pseudo-elements with background images
+ * 
+ * Recommended icon names (from Fluent UI System Icons):
+ * - Brand: settings-24-regular
+ * - Help: question-circle-24-regular
+ * - Settings: settings-24-regular
+ * - Add: add-24-regular
+ * - Edit: edit-24-regular
+ * - Delete: delete-24-regular
+ * - Refresh: arrow-clockwise-24-regular
+ * - Search: search-24-regular
+ * - More: more-horizontal-24-regular
+ * - Dropdown: chevron-down-20-regular
+ * 
+ * Example SVG integration:
+ * <svg width="20" height="20"><use href="#icon-add"/></svg>
  */

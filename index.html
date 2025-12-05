@@ -11,22 +11,22 @@
     <header class="top-bar">
         <div class="top-bar-left">
             <div class="app-brand">
-                <span class="brand-icon">⚙</span>
+                <span class="brand-icon" aria-hidden="true">⚙</span>
                 <span class="brand-text">Dynamics 365 Copilot Service</span>
             </div>
         </div>
         <div class="top-bar-right">
-            <button class="icon-button" aria-label="Help">❓</button>
-            <button class="icon-button" aria-label="Settings">⚙</button>
-            <div class="user-avatar">
-                <span>RB</span>
+            <button class="icon-button" aria-label="Help"><span aria-hidden="true">❓</span></button>
+            <button class="icon-button" aria-label="Settings"><span aria-hidden="true">⚙</span></button>
+            <div class="user-avatar" aria-label="User avatar">
+                <span aria-hidden="true">RB</span>
             </div>
         </div>
     </header>
 
     <!-- Sandbox Environment Banner -->
-    <div class="sandbox-banner">
-        <span class="banner-icon">⚠</span>
+    <div class="sandbox-banner" role="alert">
+        <span class="banner-icon" aria-hidden="true">⚠</span>
         <span class="banner-text">Sandbox environment</span>
     </div>
 
@@ -35,16 +35,16 @@
         <nav class="left-nav">
             <div class="nav-section">
                 <div class="nav-section-header">Copilot Services</div>
-                <a href="#" class="nav-item active">
-                    <span class="nav-icon">📊</span>
+                <a href="#" class="nav-item active" aria-current="page">
+                    <span class="nav-icon" aria-hidden="true">📊</span>
                     <span class="nav-label">Overview</span>
                 </a>
                 <a href="#" class="nav-item">
-                    <span class="nav-icon">🤖</span>
+                    <span class="nav-icon" aria-hidden="true">🤖</span>
                     <span class="nav-label">Copilots</span>
                 </a>
                 <a href="#" class="nav-item">
-                    <span class="nav-icon">🔌</span>
+                    <span class="nav-icon" aria-hidden="true">🔌</span>
                     <span class="nav-label">Connectors</span>
                 </a>
             </div>
@@ -52,15 +52,15 @@
             <div class="nav-section">
                 <div class="nav-section-header">Settings</div>
                 <a href="#" class="nav-item">
-                    <span class="nav-icon">🔑</span>
+                    <span class="nav-icon" aria-hidden="true">🔑</span>
                     <span class="nav-label">Security</span>
                 </a>
                 <a href="#" class="nav-item">
-                    <span class="nav-icon">⚙</span>
+                    <span class="nav-icon" aria-hidden="true">⚙</span>
                     <span class="nav-label">Configuration</span>
                 </a>
                 <a href="#" class="nav-item">
-                    <span class="nav-icon">📋</span>
+                    <span class="nav-icon" aria-hidden="true">📋</span>
                     <span class="nav-label">Audit logs</span>
                 </a>
             </div>
@@ -68,11 +68,11 @@
             <div class="nav-section">
                 <div class="nav-section-header">Administration</div>
                 <a href="#" class="nav-item">
-                    <span class="nav-icon">👥</span>
+                    <span class="nav-icon" aria-hidden="true">👥</span>
                     <span class="nav-label">Users</span>
                 </a>
                 <a href="#" class="nav-item">
-                    <span class="nav-icon">🏢</span>
+                    <span class="nav-icon" aria-hidden="true">🏢</span>
                     <span class="nav-label">Environments</span>
                 </a>
             </div>
@@ -84,26 +84,26 @@
             <div class="command-bar">
                 <div class="command-bar-left">
                     <button class="command-button primary">
-                        <span class="button-icon">➕</span>
+                        <span class="button-icon" aria-hidden="true">➕</span>
                         <span class="button-text">New</span>
                     </button>
                     <button class="command-button">
-                        <span class="button-icon">✏️</span>
+                        <span class="button-icon" aria-hidden="true">✏️</span>
                         <span class="button-text">Edit</span>
                     </button>
                     <button class="command-button">
-                        <span class="button-icon">🗑️</span>
+                        <span class="button-icon" aria-hidden="true">🗑️</span>
                         <span class="button-text">Delete</span>
                     </button>
                     <button class="command-button">
-                        <span class="button-icon">🔄</span>
+                        <span class="button-icon" aria-hidden="true">🔄</span>
                         <span class="button-text">Refresh</span>
                     </button>
                 </div>
                 <div class="command-bar-right">
                     <div class="search-box">
-                        <span class="search-icon">🔍</span>
-                        <input type="text" placeholder="Search" class="search-input">
+                        <span class="search-icon" aria-hidden="true">🔍</span>
+                        <input type="text" placeholder="Search" class="search-input" aria-label="Search">
                     </div>
                 </div>
             </div>
@@ -112,17 +112,17 @@
             <div class="card">
                 <div class="card-header">
                     <h1 class="card-title">Copilot Configuration</h1>
-                    <button class="ghost-button">
-                        <span class="button-icon">⋯</span>
+                    <button class="ghost-button" aria-label="More options">
+                        <span class="button-icon" aria-hidden="true">⋯</span>
                     </button>
                 </div>
 
                 <!-- Tab Navigation -->
-                <div class="tabs">
-                    <button class="tab-item active">General</button>
-                    <button class="tab-item">Channels</button>
-                    <button class="tab-item">Advanced</button>
-                    <button class="tab-item">Analytics</button>
+                <div class="tabs" role="tablist">
+                    <button class="tab-item active" role="tab" aria-selected="true">General</button>
+                    <button class="tab-item" role="tab" aria-selected="false">Channels</button>
+                    <button class="tab-item" role="tab" aria-selected="false">Advanced</button>
+                    <button class="tab-item" role="tab" aria-selected="false">Analytics</button>
                 </div>
 
                 <!-- Form Content -->
@@ -159,7 +159,7 @@
                                         <option value="web">Web Chat</option>
                                         <option value="mobile">Mobile App</option>
                                     </select>
-                                    <span class="dropdown-icon">▼</span>
+                                    <span class="dropdown-icon" aria-hidden="true">▼</span>
                                 </div>
                                 <div class="form-description">
                                     Select the primary channel for this copilot
