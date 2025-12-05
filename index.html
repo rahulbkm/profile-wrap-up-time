@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamics 365 Copilot Service - Admin Center</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <div class="app-brand">
+                <span class="brand-icon">⚙</span>
+                <span class="brand-text">Dynamics 365 Copilot Service</span>
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <button class="icon-button" aria-label="Help">❓</button>
+            <button class="icon-button" aria-label="Settings">⚙</button>
+            <div class="user-avatar">
+                <span>RB</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sandbox Environment Banner -->
+    <div class="sandbox-banner">
+        <span class="banner-icon">⚠</span>
+        <span class="banner-text">Sandbox environment</span>
+    </div>
+
+    <div class="main-container">
+        <!-- Left Navigation Panel -->
+        <nav class="left-nav">
+            <div class="nav-section">
+                <div class="nav-section-header">Copilot Services</div>
+                <a href="#" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-label">Overview</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🤖</span>
+                    <span class="nav-label">Copilots</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🔌</span>
+                    <span class="nav-label">Connectors</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-header">Settings</div>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🔑</span>
+                    <span class="nav-label">Security</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⚙</span>
+                    <span class="nav-label">Configuration</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📋</span>
+                    <span class="nav-label">Audit logs</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-header">Administration</div>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-label">Users</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🏢</span>
+                    <span class="nav-label">Environments</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <!-- Command Bar -->
+            <div class="command-bar">
+                <div class="command-bar-left">
+                    <button class="command-button primary">
+                        <span class="button-icon">➕</span>
+                        <span class="button-text">New</span>
+                    </button>
+                    <button class="command-button">
+                        <span class="button-icon">✏️</span>
+                        <span class="button-text">Edit</span>
+                    </button>
+                    <button class="command-button">
+                        <span class="button-icon">🗑️</span>
+                        <span class="button-text">Delete</span>
+                    </button>
+                    <button class="command-button">
+                        <span class="button-icon">🔄</span>
+                        <span class="button-text">Refresh</span>
+                    </button>
+                </div>
+                <div class="command-bar-right">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" placeholder="Search" class="search-input">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title">Copilot Configuration</h1>
+                    <button class="ghost-button">
+                        <span class="button-icon">⋯</span>
+                    </button>
+                </div>
+
+                <!-- Tab Navigation -->
+                <div class="tabs">
+                    <button class="tab-item active">General</button>
+                    <button class="tab-item">Channels</button>
+                    <button class="tab-item">Advanced</button>
+                    <button class="tab-item">Analytics</button>
+                </div>
+
+                <!-- Form Content -->
+                <div class="card-content">
+                    <div class="form-section">
+                        <div class="form-row">
+                            <label class="form-label" for="copilot-name">
+                                Name
+                                <span class="required-indicator">*</span>
+                            </label>
+                            <div class="form-control-wrapper">
+                                <input 
+                                    type="text" 
+                                    id="copilot-name" 
+                                    class="form-input" 
+                                    value="Customer Service Copilot"
+                                    placeholder="Enter copilot name"
+                                >
+                                <div class="form-description">
+                                    The name that will be displayed to users
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label class="form-label" for="channel">
+                                Channel
+                                <span class="required-indicator">*</span>
+                            </label>
+                            <div class="form-control-wrapper">
+                                <div class="dropdown-wrapper">
+                                    <select id="channel" class="form-select">
+                                        <option value="teams">Microsoft Teams</option>
+                                        <option value="web">Web Chat</option>
+                                        <option value="mobile">Mobile App</option>
+                                    </select>
+                                    <span class="dropdown-icon">▼</span>
+                                </div>
+                                <div class="form-description">
+                                    Select the primary channel for this copilot
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label class="form-label" for="description">
+                                Description
+                            </label>
+                            <div class="form-control-wrapper">
+                                <textarea 
+                                    id="description" 
+                                    class="form-textarea" 
+                                    rows="4"
+                                    placeholder="Enter a description for this copilot"
+                                >An AI-powered assistant for customer service teams to enhance productivity and provide intelligent support.</textarea>
+                                <div class="form-description">
+                                    Optional description for internal reference
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label class="form-label">
+                                Status
+                            </label>
+                            <div class="form-control-wrapper">
+                                <div class="toggle-group">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                    <span class="toggle-label">Active</span>
+                                </div>
+                                <div class="form-description">
+                                    Enable or disable this copilot
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="form-actions">
+                        <button class="action-button primary">Save</button>
+                        <button class="action-button">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
