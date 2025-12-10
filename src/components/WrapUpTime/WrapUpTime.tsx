@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { FaRobot } from 'react-icons/fa';
 import './WrapUpTime.css';
 
@@ -11,6 +11,7 @@ interface Message {
 type WrapUpConfig = 'always' | 'never' | 'custom' | null;
 
 const WrapUpTime: React.FC = () => {
+  const nextIdRef = useRef(2);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
@@ -24,15 +25,19 @@ const WrapUpTime: React.FC = () => {
   const [customMinutes, setCustomMinutes] = useState('');
   const [customSeconds, setCustomSeconds] = useState('');
 
+  const getNextId = () => {
+    return nextIdRef.current++;
+  };
+
   const handleOptionClick = (option: WrapUpConfig, optionText: string) => {
     // Add user message
     const newUserMessage: Message = {
-      id: messages.length + 1,
+      id: getNextId(),
       type: 'user',
       text: optionText
     };
     
-    setMessages([...messages, newUserMessage]);
+    setMessages(prev => [...prev, newUserMessage]);
     setShowOptions(false);
     setSelectedConfig(option);
 
@@ -57,7 +62,7 @@ const WrapUpTime: React.FC = () => {
     setMessages(prevMessages => [
       ...prevMessages,
       {
-        id: prevMessages.length + 1,
+        id: getNextId(),
         type: 'bot',
         text
       }
@@ -71,12 +76,12 @@ const WrapUpTime: React.FC = () => {
       const userMessage = `${mins} min ${secs} secs`;
       
       const newUserMessage: Message = {
-        id: messages.length + 1,
+        id: getNextId(),
         type: 'user',
         text: userMessage
       };
       
-      setMessages([...messages, newUserMessage]);
+      setMessages(prev => [...prev, newUserMessage]);
       setShowCustomInput(false);
 
       setTimeout(() => {
