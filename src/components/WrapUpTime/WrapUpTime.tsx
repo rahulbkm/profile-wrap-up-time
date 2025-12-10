@@ -20,7 +20,7 @@ const WrapUpTime: React.FC = () => {
     if (!selectedOption) return 'No wrap-up time configured';
     if (selectedOption === 'always') return 'Wrap-up time is always blocked';
     if (selectedOption === 'never') return 'Wrap-up time is not blocked';
-    if (selectedOption === 'custom' && customMinutes) {
+    if (selectedOption === 'custom' && (customMinutes || customSeconds)) {
       const mins = customMinutes ? `${customMinutes} min` : '';
       const secs = customSeconds ? `${customSeconds} sec` : '';
       return `Custom wrap-up time: ${mins}${mins && secs ? ' ' : ''}${secs}`;
