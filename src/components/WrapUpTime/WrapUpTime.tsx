@@ -7,7 +7,7 @@ const WrapUpTime: React.FC = () => {
   const predefinedOptions = [
     'No wrap up time is needed',
     'As long as the CSR needs',
-    'Wrap time will be x minutes y seconds'
+    'Wrap time will be 5 minutes 30 seconds'
   ];
 
   const handlePillClick = (option: string) => {
@@ -33,9 +33,9 @@ const WrapUpTime: React.FC = () => {
             placeholder="Describe your wrap up time requirements..."
           />
           <div className="predefined-pills">
-            {predefinedOptions.map((option, index) => (
+            {predefinedOptions.map((option) => (
               <button
-                key={index}
+                key={option}
                 className="pill-button"
                 onClick={() => handlePillClick(option)}
               >
