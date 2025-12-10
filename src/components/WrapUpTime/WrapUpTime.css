@@ -1,0 +1,80 @@
+.wrap-up-time-section {
+  background-color: white;
+  padding: 24px;
+  margin-top: 16px;
+}
+
+.wrap-up-time-content {
+  max-width: 600px;
+}
+
+.wrap-up-time-group {
+  margin-bottom: 24px;
+}
+
+.wrap-up-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.wrap-up-description {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.wrap-up-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #374151;
+  background-color: white;
+  transition: all 0.2s;
+  margin-bottom: 16px;
+}
+
+.wrap-up-input:focus {
+  outline: none;
+  border-color: #0078d4;
+  box-shadow: 0 0 0 1px #0078d4;
+}
+
+.predefined-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill-button {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 16px;
+  background-color: #f9fafb;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.pill-button:hover {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.pill-button:active {
+  background-color: #d1d5db;
+}
+
+.pill-button:focus {
+  outline: none;
+  border-color: #0078d4;
+  box-shadow: 0 0 0 1px #0078d4;
+}
