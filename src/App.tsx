@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Toolbar from './components/Toolbar/Toolbar';
 import FormSection from './components/Form/FormSection';
+import WrapUpTime from './components/WrapUpTime/WrapUpTime';
 import './styles/App.css';
 
 const App: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<string>('general');
+
   return (
     <div className="app">
       <Header />
@@ -19,14 +22,31 @@ const App: React.FC = () => {
               <p className="subtitle">Channel Profile</p>
             </div>
             <div className="tabs">
-              <button className="tab tab-active">General</button>
-              <button className="tab">Automated Messages</button>
+              <button 
+                className={`tab ${activeTab === 'general' ? 'tab-active' : ''}`}
+                onClick={() => setActiveTab('general')}
+              >
+                General
+              </button>
+              <button 
+                className={`tab ${activeTab === 'wrapup' ? 'tab-active' : ''}`}
+                onClick={() => setActiveTab('wrapup')}
+              >
+                Wrap up time
+              </button>
+              <button 
+                className={`tab ${activeTab === 'automated' ? 'tab-active' : ''}`}
+                onClick={() => setActiveTab('automated')}
+              >
+                Automated Messages
+              </button>
               <button className="tab tab-dropdown">
                 Related
                 <span className="dropdown-arrow">▼</span>
               </button>
             </div>
-            <FormSection />
+            {activeTab === 'general' && <FormSection />}
+            {activeTab === 'wrapup' && <WrapUpTime />}
           </div>
         </main>
       </div>
