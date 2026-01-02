@@ -26,7 +26,7 @@ const PostCallSurvey: React.FC = () => {
           {isEnabled && (
             <div className="survey-options">
               <p className="survey-description">
-                When selected, post conversation survey will powered by Microsoft Copilot Studio AI agent. A survey AI agent will be automatically triggered once a conversation has been ended allowing customers to provide their feedback
+                When selected, post conversation survey will be powered by Microsoft Copilot Studio AI agent. A survey AI agent will be automatically triggered once a conversation has been ended allowing customers to provide their feedback
               </p>
               <div className="form-group">
                 <label htmlFor="feedback-survey" className="form-label">
