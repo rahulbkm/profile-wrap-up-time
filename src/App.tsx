@@ -4,6 +4,8 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Toolbar from './components/Toolbar/Toolbar';
 import FormSection from './components/Form/FormSection';
 import WrapUpTime from './components/WrapUpTime/WrapUpTime';
+import PostCallSurvey from './components/PostCallSurvey/PostCallSurvey';
+import NotificationTemplates from './components/NotificationTemplates/NotificationTemplates';
 import './styles/App.css';
 
 const App: React.FC = () => {
@@ -34,7 +36,24 @@ const App: React.FC = () => {
               >
                 Wrap up time
               </button>
-              <button className="tab">Automated Messages</button>
+              <button 
+                className={`tab ${activeTab === 'automated-messages' ? 'tab-active' : ''}`}
+                onClick={() => setActiveTab('automated-messages')}
+              >
+                Automated Messages
+              </button>
+              <button 
+                className={`tab ${activeTab === 'post-call-survey' ? 'tab-active' : ''}`}
+                onClick={() => setActiveTab('post-call-survey')}
+              >
+                Post-call survey
+              </button>
+              <button 
+                className={`tab ${activeTab === 'notification-templates' ? 'tab-active' : ''}`}
+                onClick={() => setActiveTab('notification-templates')}
+              >
+                Notification templates
+              </button>
               <button className="tab tab-dropdown">
                 Related
                 <span className="dropdown-arrow">▼</span>
@@ -42,6 +61,8 @@ const App: React.FC = () => {
             </div>
             {activeTab === 'general' && <FormSection />}
             {activeTab === 'wrap-up' && <WrapUpTime />}
+            {activeTab === 'post-call-survey' && <PostCallSurvey />}
+            {activeTab === 'notification-templates' && <NotificationTemplates />}
           </div>
         </main>
       </div>
